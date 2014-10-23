@@ -36,7 +36,7 @@ get '/movies' do
   api = RottenTomatoes::Client.new
   @movie = api.search_movies(params[:movie_title])
   # require 'pry'; binding.pry
-  erb :_movie_response
+  erb :_movie_response, layout: false
 end
 
 post '/movies' do
@@ -49,7 +49,7 @@ post '/movies' do
     @movie = Movie.create(rt_id: params["id"], title: params["title"], year: params["year"], rating: params["rating"], img: params["img"], url: params["url"])
     user.movies << @movie
   end
-  erb :_hyplist
+  erb :_hyplist, layout: false
 end
 
 post '/watched' do
@@ -57,5 +57,13 @@ post '/watched' do
   usermovie = UserMovie.where(movie_id: movie.id, user_id: session[:user_id])[0]
   usermovie.completed = true
   usermovie.save
-  erb :_hyplist
+  erb :_hyplist, layout: false
+end
+
+post '/favorite' do
+  movie = Movie.find_by_rt_id(params["id"])
+  usermovie = UserMovie.where(movie_id: movie.id, user_id: session[:user_id])[0]
+  usermovie.faved = true
+  usermovie.save
+  erb :_favelist, layout: false
 end

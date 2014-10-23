@@ -1,11 +1,13 @@
 $(document).ready(function () {
   bindEvents();
+  console.log('blah')
 });
 
 function bindEvents() {
   $('form.search-movies').on('submit', searchMovies);
   $('button.add-movie').on('click', addMovie);
-  $('.list').delegate('button.mark-watched', 'click', markWatched)
+  $('.list').delegate('button.mark-watched', 'click', markWatched);
+  $('.list').delegate('button.favorite', 'click', favorite);
 };
 
 function searchMovies(e) {
@@ -58,3 +60,20 @@ function markWatched(e) {
     data: data
   }).done(refreshHyplist)
 };
+
+function favorite(e) {
+  e.preventDefault();
+  var data = {
+    id: $(this).closest('div').attr('id')
+  };
+  // debugger;
+    $.ajax({
+    url: '/favorite',
+    type: 'post',
+    data: data
+  }).done(faveConfirm)
+};
+
+function faveConfirm(response) {
+  console.log('cool')
+}

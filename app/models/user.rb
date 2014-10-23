@@ -26,4 +26,26 @@ class User < ActiveRecord::Base
     end
     pending_movies
   end
+
+  def watched_movies
+    watched_movies = []
+    self.movies.each do |movie|
+      join = UserMovie.where(movie_id: movie.id, user_id: self.id)[0]
+      if join.completed == true
+        watched_movies << movie
+      end
+    end
+    watched_movies
+  end
+
+  def favorite_movies
+    favorite_movies = []
+    self.movies.each do |movie|
+      join = UserMovie.where(movie_id: movie.id, user_id: self.id)[0]
+      if join.faved == true
+        favorite_movies << movie
+      end
+    end
+    favorite_movies
+  end
 end

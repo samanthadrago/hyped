@@ -1,8 +1,5 @@
 p10 notes
 
-wednesday to do
-
-
 hyp.ed
 MVP
 x-user signup and login
@@ -11,7 +8,10 @@ x-search - uses rt api to return the search result
 x-add the movie to your hyp list
 x-mark a movie as watched
 
+user has a hyplist, a watched list - faves appear differently, they show up at the top
+
 Stretch
+-view user profile
 -send movie to a friend
 -add bands/books
 -suggest similar movies
