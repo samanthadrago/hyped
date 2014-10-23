@@ -50,7 +50,7 @@ post '/movies' do
   if @movie
     user.movies << @movie
   else
-    @movie = Movie.create(rt_id: params["id"], title: params["title"], year: params["year"], rating: params["rating"], img: params["img"], url: params["url"], similar_url: params["similar-url"])
+    @movie = Movie.create(rt_id: params["id"], title: params["title"], year: params["year"], rating: params["rating"], img: params["img"], url: params["url"], similar_url: params["similar_url"])
     user.movies << @movie
   end
   erb :_hyplist, layout: false
@@ -71,4 +71,8 @@ post '/favorite' do
   usermovie.faved = true
   usermovie.save
   erb :_watched, layout: false
+end
+
+get '/suggestions' do
+  #do this next
 end

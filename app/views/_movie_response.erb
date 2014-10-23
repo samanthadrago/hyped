@@ -1,8 +1,8 @@
 <div class="movie-result" id=<%=@movie['id']%>>
   <img class="result-img" src=<%=@movie['posters']['original']%>>
   <h2 class="result-title"><%= @movie["title"]%></h2>
-  <p class="result-year"><%= @movie["year"]%></p>
-  <p class="result-rating"><%= @movie["ratings"]["critics_score"]%></p>
+  <p class="result-year">Year:<%= @movie["year"]%></p>
+  <p class="result-rating">Rating:<%= @movie["ratings"]["critics_score"]%></p>
   <p class="result-url"><a href="<%= @movie["links"]["alternate"]%>">Read reviews</a></p>
   <p class="similar-url" display="hidden"><a href="<%= @movie["links"]["similar"]%>"></a></p>
 

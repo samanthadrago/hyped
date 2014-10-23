@@ -1,6 +1,5 @@
 $(document).ready(function () {
   bindEvents();
-  console.log('blah')
 });
 
 function bindEvents() {
@@ -26,6 +25,7 @@ function displayMovie(response){
 
 function addMovie(e) {
   e.preventDefault();
+  debugger;
   var data = {
     id: $('.movie-result').attr('id'),
     title: $('.result-title').html(),
@@ -33,7 +33,7 @@ function addMovie(e) {
     rating: $('.result-rating').html(),
     img: $('.result-img').attr('src'),
     url: $('p.result-url > a').attr('href'),
-    similar_url: $('p.result-url > a').attr('href'),
+    similar_url: $('p.similar-url > a').attr('href'),
   };
   // debugger;
   $.ajax({

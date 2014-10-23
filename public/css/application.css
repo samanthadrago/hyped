@@ -1,71 +1,45 @@
+html, body {
+  height: 100%;
+}
+
 .container {
   font-family: 'Cousine', 'courier';
-  margin: 20px auto;
-  width: 800px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  margin-left: 20px auto;
+  margin-right: 20px auto;
+  width: 90%;
+  padding: 70px;
+  background-color: #DADFE1;
+  /*clear: fixed;*/
 }
 
-.search {
-  float: right;
-  width: 35%;
-  border: 1px dotted black;
-}
-
-div .search-movies {
-  text-align: center;
-  border: 1px dotted black;
-  padding: 5px;
-}
-
-div .movie-result {
-  text-align: center;
-  border: 1px dotted black;
-  padding: 5px;
-}
-
-.hyplist {
-  float: left;
-  width: 50%;
-  border: 1px dotted black;
-}
-
-.watched-list {
-  margin: 0 auto;
-  text-align: center;
-  width: 80%;
-  border: 1px dotted black;
-}
-
-div .hyp-movie {
-  text-align: center;
-  border: 1px dotted black;
-  padding: 5px;
+.container:after {
+  content:"";
+  display: table;
+  clear:both;
 }
 
 nav {
+  font-family: 'Cousine', 'courier';
+  background-color: #DCC6E0;
+  position: fixed;
   width: 100%;
-  height: 40px;
-  font-weight: bold;
 }
 
-nav .brand, nav .brand a {
-  margin-left: 25px;
-  font-size: 18pt;
-  text-decoration: none;
-  color: #444;
-  width: 60%;
+nav h1 {
+  margin-left: 20px;
+  text-align: right;
   display: inline-block;
+  color: #1BA39C;
 }
 
 nav ul {
+  margin-left: 50px;
   display: inline-block;
-  width: 30%;
   text-align: right;
 }
 
 nav li {
-  margin-right: 25px;
+  padding: 20px;
   display: inline;
 }
 
@@ -78,37 +52,164 @@ nav li a:hover {
   text-decoration: underline;
 }
 
+/*button {
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #6C7A89;
+  height: 40px;
+  border: 0;
+  border-bottom: 2px solid #22303f;
+  cursor: pointer;
+  /*-webkit-box-shadow: inset 0 -2px #22303f;*/
+  /*box-shadow: inset 0 -2px #22303f;*/
+}
+
+button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}*/
+
 form label {
   font-weight: bold;
   margin-right: 20px;
+}
+
+.hyplist {
+  padding: 10px;
+  float: left;
+  width: 50%;
+}
+
+
+.hyplist h1 {
+  color: #913D88;
+}
+
+
+div .hyp-movie {
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #A2DED0;
+  text-align: right;
+  padding: 5px;
+  padding-right: 15px;
+}
+
+.hyp-movie img {
+  float: left;
+}
+
+.hyp-movie  {
+
+  color: #913D88;
+}
+
+.hyp-movie a {
+  color: gray;
+  text-decoration: none;
+}
+
+.hyp-movie a:hover {
+  color: #913D88;
+  text-decoration: underline;
 }
 
 input {
   margin-bottom: 10px;
 }
 
-.errors {
-  color: red;
+.search {
+  float: right;
+  width: 35%;
+  padding: 10px;
 }
 
-form.quirks {
-  display: inline-block;
-}
-
-.submit {
+div .search-movies {
   text-align: center;
+  padding: 5px;
 }
 
-.label {
-  font-weight: bold;
-  float: left;
+.search h2 {
+  color: #913D88;
+}
+
+div .movie-result {
+  margin-top: 50px;
+  text-align: center;
+  padding: 5px;
+  background-color: #DCC6E0;
+}
+
+.movie-result h2 {
+  color: #1BA39C;
+}
+
+.movie-result a {
+  color: gray;
+  text-decoration: none;
+}
+
+.movie-result a:hover {
+  color: #913D88;
+  text-decoration: underline;
+}
+
+
+div .list {
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 80%;
+  text-align: center;
+  padding: 5px;
+}
+
+
+.favorite-movie, .watched-movie {
+  background-color: #A2DED0;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 400px;
   text-align: right;
-  margin-right: 20px;
-  width: 200px;
+  padding: 20px;
+ }
+
+.favorite-movie, .watched-movie img {
+  float: left;
 }
 
-#sign-out input {
-  border:none;
-  background:none;
-  font-weight: :bold;
+.favorite-movie, .watched-movie h2 {
+  color: #913D88;
+}
+
+.favorite-movie, .watched-movie a {
+  color: gray;
+  text-decoration: none;
+}
+
+.favorite-movie, .watched-movie a:hover {
+  color: #913D88;
+  text-decoration: underline;
+}
+
+div .sign-in {
+  margin: 0 auto;
+  width: 50%;
+}
+
+div .sign-up {
+  margin: 0 auto;
+  width: 50%;
+
+}
+
+.sign-up, .sign-in h1 {
+  color: #913D88
+}
+
+.sign-up, .sign-in label {
+  color: #913D88
 }
