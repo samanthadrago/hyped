@@ -1,0 +1,36 @@
+p10 notes
+
+wednesday to do
+
+
+hyp.ed
+MVP
+x-user signup and login
+x-homepage - user sees their movie list
+x-search - uses rt api to return the search result
+x-add the movie to your hyp list
+x-mark a movie as watched
+
+Stretch
+-send movie to a friend
+-add bands/books
+-suggest similar movies
+-try to get/display synopsis from api data
+-'next' button to go to next search result
+-link to netflix? or show if it's on netflix?
+-jquery ui (drag n drop)
+-refactor javascript into mvc
+
+best album by a band?
+
+add band/book/movie to your pending list
+search by name
+check something off pending list
+add to favorite
+share with a friend
+
+-search by director/actor and get a movie rec, add it to your list
+
+-search a band you like and use lastfm api to see similar artists, bookmark the ones you want to listen to
+
+-my rating

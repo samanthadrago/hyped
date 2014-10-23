@@ -1,11 +1,13 @@
 require 'faker'
 
-# create a few users
+5.times do
+  User.create :username => Faker::Internet.user_name, :password => 'password'
+end
 
-#TODO: Once you have implemented BCrypt - you can use these to seed your database.
+5.times do
+  Movie.create :title => "Star Wars", :rating => "5", :year => "1975", :summary => "Stuff happens and stuff."
+end
 
-
-# User.create :name => 'Dev Bootcamp Student', :email => 'me@example.com', :password => 'password'
-# 5.times do
-#   User.create :name => Faker::Name.name, :email => Faker::Internet.email, :password => 'password'
-# end
+10.times do
+  UserMovie.create :user_id => rand(5), :movie_id => rand(5)
+end

@@ -1,13 +1,39 @@
 .container {
+  font-family: 'Cousine', 'courier';
   margin: 20px auto;
   width: 800px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
 }
 
-.container h1 {
-  font-size: 17pt;
+.search {
+  float: right;
+  width: 35%;
+  border: 1px dotted black;
+}
 
+div .search-movies {
+  text-align: center;
+  border: 1px dotted black;
+  padding: 5px;
+}
+
+div .movie-result {
+  text-align: center;
+  border: 1px dotted black;
+  padding: 5px;
+}
+
+.hyplist {
+  float: left;
+  width: 60%;
+  border: 1px dotted black;
+}
+
+div .hyp-movie {
+  text-align: center;
+  border: 1px dotted black;
+  padding: 5px;
 }
 
 nav {

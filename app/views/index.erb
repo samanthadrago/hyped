@@ -1,8 +1,10 @@
 <div class="container">
-
+  <%= erb :_nav %>
   <% if current_user %>
-  <%= erb :_all_users %>
+    <%= erb :_logged_in_home%>
   <% else %>
-  "Welcome!"
+    <%= erb :sign_in %>
+    <%= erb :sign_up %>
+
   <% end %>
 </div>

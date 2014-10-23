@@ -15,7 +15,9 @@ gem 'activesupport'
 gem 'activerecord'
 
 gem 'rake'
-gem 'bcrypt-ruby'
+gem 'bcrypt'
+gem 'httparty'
+gem 'dotenv'
 
 gem 'shotgun'
 
@@ -28,4 +30,5 @@ group :test, :development do
   gem 'rspec'
   gem 'factory_girl'
   gem 'faker'
+  gem 'pry'
 end

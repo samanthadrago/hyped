@@ -1,41 +1,61 @@
-require 'bcrypt'
 
 get '/' do
-  # render home page
- #TODO: Show all users if user is signed in
   erb :index
 end
 
 #----------- SESSIONS -----------
 
-get '/sessions/new' do
-  erb :sign_in
-end
 
 post '/sessions' do
- @user = User.find_by_email( params[:email])
+ @user = User.find_by_username( params[:username])
   if @user.password == params[:password]
     session[:user_id] = @user.id
   end
-  current_user
   redirect '/'
 end
 
-delete '/sessions/:id' do
+get '/logout' do
+  session.clear
   redirect '/'
-  session = nil
 end
 
 #----------- USERS -----------
 
-get '/users/new' do
-  erb :sign_up
-end
 
 post '/users' do
-  @user = User.create(params[:user])
+  @user = User.create(params)
   if @user
     session[:user_id] = @user.id
   end
   redirect '/'
+end
+
+#----------- MOVIES -----------
+
+get '/movies' do
+  api = RottenTomatoes::Client.new
+  @movie = api.search_movies(params[:movie_title])
+  # require 'pry'; binding.pry
+  erb :_movie_response
+end
+
+post '/movies' do
+  user = User.find(session[:user_id])
+  @movie = Movie.find_by_rt_id(params["id"])
+  # require 'pry'; binding.pry
+  if @movie
+    user.movies << @movie
+  else
+    @movie = Movie.create(rt_id: params["id"], title: params["title"], year: params["year"], rating: params["rating"], img: params["img"], url: params["url"])
+    user.movies << @movie
+  end
+  erb :_hyplist
+end
+
+post '/watched' do
+  movie = Movie.find_by_rt_id(params["id"])
+  usermovie = UserMovie.where(movie_id: movie.id, user_id: session[:user_id])[0]
+  usermovie.completed = true
+  usermovie.save
+  erb :_hyplist
 end
