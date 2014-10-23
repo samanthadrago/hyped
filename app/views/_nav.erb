@@ -1,6 +1,8 @@
 <nav>
   <% if current_user %>
-    <a href="/logout">Sign Out</a>
-
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/logout">Sign Out</a></li>
+      <li><a href="/user/<%=session[:user_id]%>">Watched</a></li>
   <% end %>
 </nav>

@@ -26,7 +26,14 @@ div .movie-result {
 
 .hyplist {
   float: left;
-  width: 60%;
+  width: 50%;
+  border: 1px dotted black;
+}
+
+.watched-list {
+  margin: 0 auto;
+  text-align: center;
+  width: 80%;
   border: 1px dotted black;
 }
 

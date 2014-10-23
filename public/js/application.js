@@ -5,7 +5,7 @@ $(document).ready(function () {
 
 function bindEvents() {
   $('form.search-movies').on('submit', searchMovies);
-  $('button.add-movie').on('click', addMovie);
+  $('.search-results').delegate('button.add-movie', 'click', addMovie);
   $('.list').delegate('button.mark-watched', 'click', markWatched);
   $('.list').delegate('button.favorite', 'click', favorite);
 };
@@ -32,7 +32,8 @@ function addMovie(e) {
     year: $('.result-year').html(),
     rating: $('.result-rating').html(),
     img: $('.result-img').attr('src'),
-    url: $('p.result-url > a').attr('href')
+    url: $('p.result-url > a').attr('href'),
+    similar_url: $('p.result-url > a').attr('href'),
   };
   // debugger;
   $.ajax({
@@ -66,14 +67,15 @@ function favorite(e) {
   var data = {
     id: $(this).closest('div').attr('id')
   };
-  // debugger;
+  debugger;
     $.ajax({
     url: '/favorite',
     type: 'post',
     data: data
-  }).done(faveConfirm)
+  }).done(refreshWatchedList)
 };
 
-function faveConfirm(response) {
-  console.log('cool')
+function refreshWatchedList(response) {
+  $('section.watched-list').empty();
+  $('section.watched-list').append(response)
 }

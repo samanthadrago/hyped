@@ -1,4 +1,5 @@
 <div class="list">
+<h1>Your hyplist</h1>
 <% user = User.find(session[:user_id]) %>
 <% user.pending_movies.each do |movie| %>
   <div class="hyp-movie" id="<%= movie.rt_id %>">
@@ -9,7 +10,6 @@
     <p class="url"><a href="<%= movie.url%>">Read reviews</a></p>
 
     <button class="mark-watched">Mark as watched</button><br>
-    <button class="favorite">Mark as fave</button>
   </div>
 
 <% end %>

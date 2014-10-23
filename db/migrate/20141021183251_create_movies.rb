@@ -7,6 +7,7 @@ class CreateMovies < ActiveRecord::Migration
       t.string :year
       t.string :img
       t.string :url
+      t.string :similar_url
       t.string :summary
 
       t.timestamps

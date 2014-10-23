@@ -1,21 +1,21 @@
 <div class="list">
-
+<h1>Your Faved list</h1>
 <% user = User.find(session[:user_id]) %>
 <% user.favorite_movies.each do |movie| %>
-  <div class="watched-movie" id="<%= movie.rt_id %>">
+  <div class="favorite-movie" id="<%= movie.rt_id %>">
     <img src="<%= movie.img %>">
     <h2 class="title"><%= movie.title%></h2>
     <p class="year"><%= movie.title%></p>
     <p class="rating"><%= movie.rating %></p>
     <p class="url"><a href="<%= movie.url%>">Read reviews</a></p>
 
-    <button class="favorite">Mark as fave</button>
   </div>
 
 <% end %>
 </div>
 
 <div class="list">
+<h1>Your Watched list</h1>
 <% user = User.find(session[:user_id]) %>
 <% user.watched_movies.each do |movie| %>
   <div class="watched-movie" id="<%= movie.rt_id %>">

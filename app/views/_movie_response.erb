@@ -4,6 +4,7 @@
   <p class="result-year"><%= @movie["year"]%></p>
   <p class="result-rating"><%= @movie["ratings"]["critics_score"]%></p>
   <p class="result-url"><a href="<%= @movie["links"]["alternate"]%>">Read reviews</a></p>
+  <p class="similar-url" display="hidden"><a href="<%= @movie["links"]["similar"]%>"></a></p>
 
   <button class="add-movie">Add to your hyplist</button>
 </div>

@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
     watched_movies = []
     self.movies.each do |movie|
       join = UserMovie.where(movie_id: movie.id, user_id: self.id)[0]
-      if join.completed == true
+      if join.completed == true && join.faved == false
         watched_movies << movie
       end
     end

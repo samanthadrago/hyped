@@ -1,5 +1,11 @@
 p10 notes
 
+thursday to do:
+-movie suggestions page (till 3)
+-suggest users button? (till 4)
+-styling (till 6)
+-testing (till 7)
+
 hyp.ed
 MVP
 x-user signup and login
@@ -8,10 +14,10 @@ x-search - uses rt api to return the search result
 x-add the movie to your hyp list
 x-mark a movie as watched
 
-user has a hyplist, a watched list - faves appear differently, they show up at the top
 
 Stretch
--view user profile
+-testing
+x-view user profile
 -send movie to a friend
 -add bands/books
 -suggest similar movies
